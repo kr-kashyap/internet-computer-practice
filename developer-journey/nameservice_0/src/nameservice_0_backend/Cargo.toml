@@ -1,3 +1,4 @@
+workspace = { members = ["canisters/register_transfer_names/api", "canisters/register_transfer_names/impl"] }
 [package]
 name = "nameservice_0_backend"
 version = "0.1.0"
