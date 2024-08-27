@@ -1,18 +1,24 @@
-use cosmwasm_schema::cw_serde;
-use cosmwasm_std::Coin;
-use cw_storage_plus::{Item, Map};
+// use cosmwasm_std::Coin; // TODO
+// use cw_storage_plus::{Item, Map}; // TODO
 
-#[derive(Serialize, Deserialize)]
+use candid::CandidType;
+use serde::{Deserialize, Serialize};
+
+#[derive(CandidType, Serialize, Deserialize)]
 pub struct Config {
-    pub purchase_price: Option<Coin>,
-    pub transfer_price: Option<Coin>,
-    pub cw20_contract: String,
+    pub purchase_price: Uint,
+    // Option<Coin>, // TODO
+    pub transfer_price: Uint,
+    // Option<Coin>,  // TODO
+    // pub cw20_contract: String, // Check
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(CandidType, Serialize, Deserialize)]
 pub struct NameRecord {
     pub owner: String,
 }
 
-pub const CONFIG: Item<Config> = Item::new("config");
-pub const NAME_RESOLVER: Map<&[u8], NameRecord> = Map::new("name_resolver");
+// pub const CONFIG // Check
+// : Item<Config> = Item::new("config");
+// pub const NAME_RESOLVER // Check
+// : Map<&[u8], NameRecord> = Map::new("name_resolver");

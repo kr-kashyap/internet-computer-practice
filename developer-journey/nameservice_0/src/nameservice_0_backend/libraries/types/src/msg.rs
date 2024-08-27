@@ -1,6 +1,9 @@
 use candid::CandidType;
 use serde::{Deserialize, Serialize};
 
+// use cosmwasm_schema::{QueryResponses}; // TODO
+// use cosmwasm_std::Coin; // TODO
+
 #[derive(CandidType, Serialize, Deserialize)]
 pub struct InstantiateMsg {
     pub purchase_price: Uint,
@@ -25,7 +28,7 @@ pub enum ExecuteMsg {
     },
 }
 
-#[derive(CandidType, Serialize, Deserialize, QueryResponses)]
+#[derive(CandidType, Serialize, Deserialize)] //, QueryResponses)] // TODO
 pub enum QueryMsg {
     // ResolveAddress returns the current address that the name resolves to
     #[returns(ResolveRecordResponse)]
