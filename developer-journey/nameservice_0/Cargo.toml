@@ -1,5 +1,7 @@
 [workspace]
 members = [
-    "src/nameservice_0_backend"
+    "src/nameservice_0_backend",
+    "src/nameservice_0_backend/canisters/register_transfer_names/api",
+    "src/nameservice_0_backend/canisters/register_transfer_names/impl",
+    "src/nameservice_0_backend/libraries/types"
 ]
-resolver = "2"
