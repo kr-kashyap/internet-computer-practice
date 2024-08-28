@@ -1,4 +1,3 @@
-workspace = { members = ["canisters/register_transfer_names/api", "canisters/register_transfer_names/impl", "libraries/types"] }
 [package]
 name = "nameservice_0_backend"
 version = "0.1.0"
@@ -10,6 +9,10 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-candid = "0.10"
+candid = "0.10.4"
 ic-cdk = "0.13"
 ic-cdk-timers = "0.7" # Feel free to remove this dependency if you don't need timers
+ic-cdk-macros = "0.8.4"
+ic-ledger-types = "0.9.0"
+serde = "1.0.197"
+serde_derive = "1.0.197"

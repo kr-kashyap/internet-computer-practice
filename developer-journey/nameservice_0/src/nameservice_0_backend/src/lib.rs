@@ -16,7 +16,7 @@ pub struct TransferArgs {
     to_subaccount: Option<Subaccount>,
 }
 
-#[update]
+// #[update()]
 async fn transfer(args: TransferArgs) -> Result<BlockIndex, String> {
     ic_cdk::println!(
         "Transferring {} tokens to principal {} subaccount {:?}",
