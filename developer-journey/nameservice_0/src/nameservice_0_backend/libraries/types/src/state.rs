@@ -1,4 +1,3 @@
-// use cosmwasm_std::Coin; // TODO
 // use cw_storage_plus::{Item, Map}; // TODO
 
 use candid::CandidType;
@@ -6,10 +5,8 @@ use serde::{Deserialize, Serialize};
 
 #[derive(CandidType, Serialize, Deserialize)]
 pub struct Config {
-    pub purchase_price: Uint,
-    // Option<Coin>, // TODO
-    pub transfer_price: Uint,
-    // Option<Coin>,  // TODO
+    pub purchase_price: Option<Tokens>,
+    pub transfer_price: Option<Tokens>,
     // pub cw20_contract: String, // Check
 }
 

@@ -1,15 +1,14 @@
 use candid::CandidType;
 use serde::{Deserialize, Serialize};
 
+use ic_ledger_types::{Tokens};
+
 // use cosmwasm_schema::{QueryResponses}; // TODO
-// use cosmwasm_std::Coin; // TODO
 
 #[derive(CandidType, Serialize, Deserialize)]
 pub struct InstantiateMsg {
-    pub purchase_price: Uint,
-    // : Option<Coin>,  // TODO
-    pub transfer_price: Uint
-    // : Option<Coin>,  // TODO
+    pub purchase_price: Option<Tokens>,
+    pub transfer_price: Option<Tokens>,
     // pub cw20_contract: String, // Check
 }
 
@@ -17,14 +16,12 @@ pub struct InstantiateMsg {
 pub enum ExecuteMsg {
     Register {
         name: String,
-        coin: Uint,
-        // : Coin, // TODO
+        coin: Tokens,
     },
     Transfer {
         name: String,
         to: String,
-        coin: Uint,
-        // : Coin, // TODO
+        coin: Tokens,
     },
 }
 
@@ -45,10 +42,8 @@ pub struct ResolveRecordResponse {
 
 #[derive(CandidType, Serialize, Deserialize)]
 pub struct ConfigResponse {
-    pub purchase_price: Uint,
-    // : Option<Coin>,  // TODO
-    pub transfer_price: Uint,
-    // : Option<Coin>,  // TODO
+    pub purchase_price: Option<Tokens>,
+    pub transfer_price: Option<Tokens>,
 }
 
 impl From<Config> for ConfigResponse {
