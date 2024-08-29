@@ -1,7 +1,7 @@
 {
   "canisters": {
     "nameservice_0_backend": {
-      "candid": "src/nameservice_0_backend/nameservice_0_backend.did",
+      "candid": "src/nameservice_0_backend/canisters/register_transfer_names/api/can.did",
       "package": "nameservice_0_backend",
       "type": "rust"
     }

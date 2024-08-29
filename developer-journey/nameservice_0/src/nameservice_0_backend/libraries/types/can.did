@@ -1,0 +1,16 @@
+type AccountIdentifier = text;
+type BlockHeight = nat64;
+type EmailAddress = text;
+type Memo = nat64;
+type PhoneNumber = text;
+
+// Tokens
+type ICPTs = record {
+     e8s : nat64;
+};
+
+type Config =
+    record {
+    purchase_price: opt ICPTs;
+    transfer_price: opt ICPTs;
+    };

@@ -1,0 +1,16 @@
+import "../../../libraries/types/can.did";
+
+type ConfigResponse =
+    record {
+        Success: ConfigResponseSuccess;
+    };
+
+type ConfigResponseSuccess =
+    record {
+        config: Config;
+    };
+
+service: {
+    config: () -> (ConfigResponse) query;
+    resolve_records: () -> (text) query;
+}
