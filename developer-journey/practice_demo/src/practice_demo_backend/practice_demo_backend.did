@@ -1,0 +1,47 @@
+// Tokens
+type ICPTs = record {
+     e8s : nat64;
+};
+
+type ConfigResponse = 
+ record {
+   purchase_price: ICPTs;
+   transfer_price: ICPTs;
+ };
+
+type ResolveRecordResponse =
+  record {
+    address: opt text;
+ };
+
+type TransferReceipt = 
+  variant {
+    Err: TransferErr;
+    Ok: ResolveRecordResponse;
+ };
+
+type RegisterReceipt = 
+ variant {
+   Err: RegisterErr;
+   Ok: ResolveRecordResponse;
+ };
+
+type RegisterErr = 
+ variant {
+   NotAllowed;
+   InsufficientTokens;
+ };
+
+type TransferErr = 
+ variant {
+   NotAllowed;
+   NotExistingDomain;
+   InsufficientTokens;
+ };
+
+service : {
+    "config": () -> (ConfigResponse) query;
+    "resolve_record": (text) -> (ResolveRecordResponse) query;
+    "register": (text) -> (RegisterReceipt);
+    "transfer": (text, text) -> (TransferReceipt);
+}

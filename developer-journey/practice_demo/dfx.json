@@ -1,0 +1,17 @@
+{
+  "canisters": {
+    "practice_demo_backend": {
+      "candid": "src/practice_demo_backend/practice_demo_backend.did",
+      "package": "practice_demo_backend",
+      "type": "rust"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
