@@ -25,14 +25,14 @@ pub enum ExecuteMsg {
     },
 }
 
-#[derive(CandidType, Serialize, Deserialize)] //, QueryResponses)] // TODO
-pub enum QueryMsg {
-    // ResolveAddress returns the current address that the name resolves to
-    #[returns(ResolveRecordResponse)]
-    ResolveRecord { name: String },
-    #[returns(ConfigResponse)]
-    Config {},
-}
+// #[derive(CandidType, Serialize, Deserialize)] //, QueryResponses)] // TODO
+// pub enum QueryMsg {
+//     // ResolveAddress returns the current address that the name resolves to
+//     #[returns(ResolveRecordResponse)]
+//     ResolveRecord { name: String },
+//     #[returns(ConfigResponse)]
+//     Config {},
+// }
 
 // We define a custom struct for each query response
 #[derive(CandidType, Serialize, Deserialize)]
